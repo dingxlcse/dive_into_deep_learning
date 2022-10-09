@@ -12,6 +12,7 @@ print('x[3]:', x[3])  # 通过张量的索引来访问任一元素
 print('张量的形状:', x.shape)  # 张量的形状
 print('张量的长度:', len(x))  # 张量的长度
 z = torch.arange(24).reshape(2, 3, 4)
+print(z)
 print('三维张量的长度:', len(z))
 
 print('3.矩阵')
@@ -76,8 +77,8 @@ print('矩阵的𝐿2范数:', torch.norm(v))  # 矩阵的𝐿2范数
 print('10.根据索引访问矩阵')
 y = torch.arange(10).reshape(5, 2)
 print('y:', y)
-index = torch.tensor([1, 4])
-print('y[index]:', y[index])
+index = torch.tensor([1, 4])  
+print('y[index]:', y[index])  # 有点不解,其实相当于y.index_select(0,indices)即第0维上选第1维索引1和4
 
 print('11.理解pytorch中的gather()函数')
 a = torch.arange(15).view(3, 5)
